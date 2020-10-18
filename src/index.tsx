@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { configureStore } from 'store';
+import { IState } from 'store/types';
+
+interface IProps {
+  initialState?: IState | undefined;
+  children: React.ReactChild;
+}
+const RootProvider: FC<IProps> = ({ initialState, children }) => {
+  const store = configureStore({ initialState });
+
+  return <Provider store={store}>{children}</Provider>;
+};
 
 ReactDOM.render(
-  <React.StrictMode>
+  <RootProvider>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </RootProvider>,
+  document.getElementById('root'),
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
