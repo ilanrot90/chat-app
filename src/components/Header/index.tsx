@@ -33,6 +33,7 @@ const Name = styled(TextContent)`
 
 const Header = () => {
   const { currentUser } = useSelector((s: IState) => s.chat);
+  debugger;
   return (
     <StyledHeader>
       <UserInfo>

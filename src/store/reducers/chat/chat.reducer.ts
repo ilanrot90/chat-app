@@ -19,6 +19,11 @@ const initialState: IChat = {
       img:
         'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-512.png',
       users: [
+        {
+          name: 'Ilan Roitlender',
+          img: 'https://pickaface.net/gallery/avatar/unr_random_180527_1151_2bcb7h9.png',
+          id: 'id0',
+        },
         { name: 'User1', img: 'https://byuc.files.wordpress.com/2012/07/avat-2.jpg', id: 'id1' },
       ],
       history: [
